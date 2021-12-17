@@ -1,0 +1,23 @@
+<div class="card">
+     <div class="left-container">
+          <div class="product-image"> <img [src]=product.image alt="product_image" class="image"> </div>
+          <div class="cart">
+               <button class="cart-button">Add to cart</button>
+               <button class="cart-button buy-button">Buy now</button>
+          </div>
+     </div>
+     <div class="product-data">
+          <h1>{{product.name}}</h1>
+          <label>Price: {{product.price}}</label>
+          <label> Color: <input type="color" class="input-color" disabled value={{product.color}}> </label>
+          
+          <p>
+               Flipkart is an Indian e-commerce company, headquartered
+               in Bangalore, Karnataka, India, and incorporated in Singapore
+               as a private limited company. The company initially focused on
+               online book sales before expanding into other product categories
+               such as consumer electronics, fashion, home essentials, groceries,
+               and lifestyle products.
+          </p>
+     </div>
+</div>
