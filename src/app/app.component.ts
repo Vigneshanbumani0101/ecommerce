@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: any;
- 
+  data:any
+
+  selectedEvent($event){
+  console.log("as");
+    this.data=$event;
+    console.log(this.data)
+  }
 }

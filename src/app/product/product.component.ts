@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { productModel } from '../model/model.interface';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-product',
@@ -9,21 +10,22 @@ import { productModel } from '../model/model.interface';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  
-  products:any;
+    
   product: any;
   categories: productModel[] = [];
+  category!: string | null;
+  valueee: any;
 
-  constructor(private route : ActivatedRoute, data:DataService) {
-    this.categories = (data.getProducts() as any).default;
-   }
+  constructor(private route : ActivatedRoute ,private titleService:Title) {
+  }
    
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => { 
-      this.products=this.categories.find(item => item.category==params.get('id'));
-      this.product = this.products.items.find((
-        item: { name: string | null; }) => item.name == params.get('name'));
-     })
+    
+    this.route.data.subscribe((response:any)=> {
+      this.product = response.product
+    })
+     this.titleService.setTitle(this.product.name);
+
   }
 
 }

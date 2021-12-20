@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PostResolver } from '../service/data.resolver';
 import { ProductComponent } from './product.component';
 
 const productRoutes: Routes = [
-  {path:'', component: ProductComponent},
+  {path:'', component: ProductComponent, resolve: {
+    product: PostResolver}}
 ];
 
 @NgModule({
