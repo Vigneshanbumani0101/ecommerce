@@ -7,15 +7,15 @@ import { DataService} from './data.service'
 @Injectable({
   providedIn: 'root'
 })
-export class PostResolver implements Resolve<any> {
-    value:any
+export class CategoryResolver implements Resolve<any> {
+    categories: any;
   constructor(private data: DataService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     
     const category =  route.paramMap.get("id");
-    const name = route.paramMap.get('name');
-     this.value = this.data.getProduct(category,name);
-    return this.value;
+    this.categories = this.data.getCategories(category);
+    console.log(this.categories)
+    return this.categories;
   }
 }

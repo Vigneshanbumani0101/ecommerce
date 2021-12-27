@@ -13,17 +13,15 @@ export class CategoriesComponent implements OnInit {
 
   category: any;
   product: any;
-  products: productModel[] = [];
-  constructor(private route: ActivatedRoute, data: DataService, private titleService:Title) {
-    this.products = (data.getProducts() as any).default;
+  constructor(private route: ActivatedRoute, private titleService:Title) {
   }
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe(params => {
-      this.category = params.get('id')
+    this.route.data.subscribe((response:any)=> {
+      this.product = response.category
+      this.category = this.product.category
       this.titleService.setTitle(this.category);
-      this.product = this.products.find(item => item.category == this.category);
     })
   }
 

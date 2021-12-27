@@ -12,10 +12,6 @@ import {Title} from "@angular/platform-browser";
 export class ProductComponent implements OnInit {
     
   product: any;
-  categories: productModel[] = [];
-  category!: string | null;
-  valueee: any;
-
   constructor(private route : ActivatedRoute ,private titleService:Title) {
   }
    
