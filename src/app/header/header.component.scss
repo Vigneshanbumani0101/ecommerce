@@ -1,0 +1,84 @@
+.header {
+	height: 50px;
+	width: 100%;
+	background-color: #2874f0;
+}
+.labels {
+	width: 70%;
+	margin: auto;
+	padding-top: 5px;
+	display: flex;
+	flex-direction: row;
+}
+.title {
+	label {
+		cursor: pointer;
+	}
+	color: white;
+	font-size: 35px;
+	padding-right: 15px;
+}
+.search-bar {
+	width: 70%;
+	margin-top: 5px;
+	height: 30px;
+	background-color: whitesmoke;
+}
+.fa-search {
+	float: right;
+	padding-top: 5px;
+	margin-right: 10px;
+	color: rgb(94, 114, 202);
+}
+.fa-shopping-cart {
+	color: white;
+	margin-right: 5px;
+}
+.cart-text {
+	margin-left: 5px;
+}
+.btn {
+	width: 10%;
+	padding-left: 25px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+.login {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 15px;
+	color: rgb(94, 114, 202);
+	cursor: pointer;
+}
+.products {
+	display: table;
+	width: 100%;
+	background-color: rgb(18, 18, 19);
+	color: white;
+}
+.cart {
+	margin-left: 20px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.middle {
+	display: table-row;
+}
+.inner {
+	display: table-cell;
+	padding: 10px;
+	text-align: center;
+	&:hover {
+		background-color: white;
+		color: black;
+		cursor: pointer;
+	}
+}
+.fixed-header {
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+}

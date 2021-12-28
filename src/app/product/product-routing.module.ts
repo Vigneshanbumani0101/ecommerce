@@ -4,12 +4,17 @@ import { PostResolver } from '../service/data.resolver';
 import { ProductComponent } from './product.component';
 
 const productRoutes: Routes = [
-  {path:'', component: ProductComponent, resolve: {
-    product: PostResolver}}
+  {
+    path: '',
+    component: ProductComponent,
+    resolve: {
+      product: PostResolver,
+    },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(productRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ProductRoutingModule { }
+export class ProductRoutingModule {}

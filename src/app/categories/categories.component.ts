@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../service/data.service';
-import { productModel } from '../model/model.interface';
-import {Title} from "@angular/platform-browser";
+import { Title } from '@angular/platform-browser';
+import { ICategory } from '../model/model.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
+  public category!: string;
+  public product!: ICategory;
+  private _subscription!: Subscription;
 
-  category: any;
-  product: any;
-  constructor(private route: ActivatedRoute, private titleService:Title) {
-  }
+  constructor(private _route: ActivatedRoute, private _titleService: Title) {}
 
   ngOnInit(): void {
-
-    this.route.data.subscribe((response:any)=> {
-      this.product = response.category
-      this.category = this.product.category
-      this.titleService.setTitle(this.category);
-    })
+   this._subscription = this._route.data.subscribe((response: any) => {
+      this.product = response.category;
+      this.category = this.product.category;
+      this._titleService.setTitle(this.category);
+    });
   }
 
+  ngOnDestroy() {
+    this._subscription.unsubscribe;
+  }
 }

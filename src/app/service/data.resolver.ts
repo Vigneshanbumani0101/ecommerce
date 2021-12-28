@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
 
-import { DataService} from './data.service'
+import { DataService } from './data.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostResolver implements Resolve<any> {
-    value:any
-  constructor(private data: DataService) {}
+  constructor(private dataService: DataService) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    
-    const category =  route.paramMap.get("id");
-    const name = route.paramMap.get('name');
-     this.value = this.data.getProduct(category,name);
-    return this.value;
+  resolve(route: ActivatedRouteSnapshot) {
+    return this.dataService.getProduct(
+      route.paramMap.get('id'),
+      route.paramMap.get('name')
+    );
   }
 }

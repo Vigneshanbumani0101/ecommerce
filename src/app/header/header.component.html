@@ -1,11 +1,11 @@
 <div class="fixed-header">
-<div class="header">
-  <div class="labels"> 
-      <div class="title"> 
-        <label routerLink="/home" >Ajio</label>
+  <div class="header">
+    <div class="labels">
+      <div class="title">
+        <label routerLink="/home">Ajio</label>
       </div>
       <div class="search-bar">
-        <i class='fas fa-search'></i>
+        <i class="fas fa-search"></i>
       </div>
       <div class="btn">
         <button class="login">Login</button>
@@ -13,16 +13,13 @@
       <div class="cart">
         <i class="fas fa-shopping-cart"> <span class="cart-text">cart</span></i>
       </div>
+    </div>
   </div>
-</div>
-<div class="products">
-  <div class="middle">
-   <div class="inner" routerLink="/category/Mobiles">Mobiles</div>
-   <div class="inner" routerLink="/category/Appliances">Appliances</div>
-   <div class="inner" routerLink="/category/Grocery">Groceries</div>
-   <div class="inner" routerLink="/category/Clothes">Clothes</div>
-   <div class="inner" routerLink="/category/Sports">Sports</div>
-   <div class="inner" routerLink="/home">Home</div>
+  <div class="products">
+    <div class="middle">
+      <span *ngFor="let item of data" class="inner">
+        <div  [routerLink]="item.link">{{ item.category }}</div>
+      </span>
+    </div>
   </div>
-</div>
 </div>

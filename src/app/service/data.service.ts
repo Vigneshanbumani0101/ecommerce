@@ -1,40 +1,51 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ICategory } from '../model/model.interface';
 import * as categories from '../model/products.json';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DataService implements Resolve<any> {
- 
-  product: any;
-  products: any;
+export class DataService {
+  private _products!: ICategory;
 
-  constructor() { }
+  constructor() {}
 
+  /**
+   *  gets all categories from the JSON file
+   *
+   * @returns list of categories
+   */
   getProducts() {
-    return categories;  
-  }
-  resolve() {
     return categories;
   }
 
-  getProduct(category, name){
-    this.products=(categories as any).default.find(item => 
-      item.category==category);
-      console.log(this.products.items)
-    this.product = this.products.items.find((
-      item: { name: string | null; }) => item.name == name);
-     
-      return this.product;
+  /**
+   *
+   *  gets the desired product by product name
+   *
+   * @param category category name
+   * @param name  product name
+   * @returns sends the desired product
+   */
+  getProduct(category, name) {
+    this._products = (categories as any).default.find(
+      (item) => item.category == category
+    );
+    return this._products.items.find(
+      (item) => item.name == name
+    );
+  }
 
-   }
-
-   getCategories(category) {
-    this.product = (categories as any).default.find((item: { category: any; }) => item.category == category);
-    
-    return this.product;
-}
-  
-  
+  /**
+   *
+   *  gets the required category to display list of products
+   *
+   * @param category category name
+   * @returns  the required category
+   */
+  getCategories(category) {
+    return (categories as any).default.find(
+      (item) => item.category == category
+    );
+  }
 }

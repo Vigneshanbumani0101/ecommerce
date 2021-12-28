@@ -1,15 +1,18 @@
-<div >
-  <img src="../../assets/images/offer.jpg" alt="offer" class="offer-image">
+<div>
+  <img src="../../assets/images/offer.jpg" alt="offer" class="offer-image" />
+</div>
+<div class="new-product">
+  <button class="button" [routerLink]="['/new-product', category]">
+    Add New Product
+  </button>
 </div>
 <div class="grid-container">
-
-   <div *ngFor="let item of product.items" class="category">
-       <div [routerLink] = "['/product',category,item.name]" class="card">
-         <img [src]=item.image alt="img"> 
-         <p class="name">
-          {{item.name}}
-         </p> 
-       </div>
-   </div>
-
+  <div *ngFor="let item of product.items" class="category">
+    <div [routerLink]="['/product', category, item.name]" class="card">
+      <img [src]="item.image" alt="img" />
+      <p class="name">
+        {{ item.name }}
+      </p>
+    </div>
+  </div>
 </div>

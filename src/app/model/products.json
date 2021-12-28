@@ -1,109 +1,122 @@
-   [{
+[
+  {
     "category": "Mobiles",
     "image": "./assets/images/mobiles.jpeg",
-    "items": [{
+    "items": [
+      {
         "name": "Samsung",
         "price": 29000,
         "color": "#ff0000",
         "image": "./assets/images/samsung.png"
-    },
-    {
+      },
+      {
         "name": "Realme",
         "price": 21000,
         "color": "#0000ff",
         "image": "./assets/images/realme.jpeg"
-    },
-    {
+      },
+      {
         "name": "Oppo",
         "price": 21000,
         "color": "#0000ff",
         "image": "./assets/images/oppo.jpeg"
-    },
-    {
+      },
+      {
         "name": "One Plus",
         "price": 21000,
         "color": "#0000ff",
         "image": "./assets/images/oneplus.jpg"
-    },
-    {
+      },
+      {
         "name": "Gionee",
         "price": 21000,
         "color": "blue",
         "image": "./assets/images/gionee.jpeg"
-    },
-    {
+      },
+      {
         "name": "Vivo",
         "price": 21000,
         "color": "#ffff00",
         "image": "./assets/images/vivo.jpeg"
-    }]
-},
-{
+      }
+    ]
+  },
+  {
     "category": "Appliances",
     "image": "./assets/images/appliances.jpg",
-    "items": [{
+    "items": [
+      {
         "name": "HeadPhones",
         "price": 2000,
         "color": "#ff0000",
         "image": "./assets/images/headphones.jpg"
-    },
-    {
+      },
+      {
         "name": "Speaker",
         "price": 2500,
         "color": "black",
         "image": "./assets/images/speaker.jpeg"
-    },
-    {
+      },
+      {
         "name": "Keyboard",
         "price": 1300,
-        "color":"#ff0000",
+        "color": "#ff0000",
         "image": "./assets/images/keyboard.jpeg"
-    },
-    {
+      },
+      {
         "name": "Camera",
         "price": 3999,
         "color": "black",
         "image": "./assets/images/camera.jpeg"
-    }]
-},
-{
+      }
+    ]
+  },
+  {
     "category": "Grocery",
     "image": "./assets/images/grocery.jpg",
-    "items": [{
+    "items": [
+      {
         "name": "Oil",
         "price": 1050,
         "color": "#ff0000",
         "image": "./assets/images/oil.jpeg"
-    }]
-},
-{
+      }
+    ]
+  },
+  {
     "category": "Home",
     "image": "./assets/images/home.jpg",
-    "items": [{
+    "items": [
+      {
         "name": "Furniture",
         "price": 19300,
         "color": "#ff0000",
         "image": "./assets/images/livingRoom.jpeg"
-    }]
-},
-{
+      }
+    ]
+  },
+  {
     "category": "Clothes",
     "image": "./assets/images/clothes.jpg",
-    "items": [{
+    "items": [
+      {
         "name": "Tshirt",
         "price": 2000,
         "color": "#ff0000",
         "image": "./assets/images/tshirt.jpeg"
-    }]
-},
-{
+      }
+    ]
+  },
+  {
     "category": "Sports",
     "image": "./assets/images/sports.jpeg",
-    "items": [{
+    "items": [
+      {
         "name": "Cricket equipments",
         "price": 6000,
         "color": "#00ff00",
         "image": "./assets/images/cricket.jpg"
-    }]
-}
+      }
+    ]
+  }
 ]
